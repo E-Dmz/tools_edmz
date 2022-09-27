@@ -5,7 +5,7 @@ import numpy as np
 from cached_property import cached_property
 FOLDER = "/Users/edmz/data/icm_data/"
 PATH_JSONL_LAST = "/Users/edmz/data/icm_data/atlas_last.jsonl"
-PATH_JSONL_CLEARMAP = "/Users/edmz/data/icm_data/atlas_clearmap.jsonl"
+PATH_JSONL_CLEARMAP = "../resources/atlas_clearmap.jsonl"
 PATH_TIFF_CLEARMAP = '/Users/edmz/data/icm_data/atlas/atlas_tif/annotation_25_clearmap.tif'
 PATH_TIFF_2017 = '/Users/edmz/data/icm_data/atlas/atlas_tif/annotation_25_2017.tif'
 
