@@ -4,6 +4,11 @@ import tifffile
 import numpy as np
 from cached_property import cached_property
 FOLDER = "/Users/edmz/data/icm_data/"
+PATH_JSONL_LAST = "/Users/edmz/data/icm_data/atlas_last.jsonl"
+PATH_JSONL_CLEARMAP = "/Users/edmz/data/icm_data/atlas_clearmap.jsonl"
+PATH_TIFF_CLEARMAP = '/Users/edmz/data/icm_data/atlas/atlas_tif/annotation_25_clearmap.tif'
+PATH_TIFF_2017 = '/Users/edmz/data/icm_data/atlas/atlas_tif/annotation_25_2017.tif'
+
 
 
 class Atlas:
@@ -15,19 +20,19 @@ class Atlas:
     @cached_property
     def df(self):
         if self.json_version == "last":
-            path_json = "/Users/edmz/data/icm_data/atlas_last.jsonl"
+            path_jsonl = PATH_JSONL_LAST
         elif self.json_version == "clearmap":
-            path_json = "/Users/edmz/data/icm_data/atlas_clearmap.jsonl"
+            path_jsonl = PATH_JSONL_CLEARMAP
         else:
             return
-        return pd.read_json(path_json, lines=True)
+        return pd.read_json(path_jsonl, lines=True)
 
     @cached_property
     def tiff(self):
-        if self.tiff_version == "2016":
-            path_tiff = '/Users/edmz/data/icm_data/atlas/atlas_tif/annotation_25_clearmap.tif'
+        if self.tiff_version == "clearmap":
+            path_tiff = PATH_TIFF_CLEARMAP
         elif self.tiff_version == "2017":
-            path_tiff = '/Users/edmz/data/icm_data/atlas/atlas_tif/annotation_25_2017.tif'
+            path_tiff = PATH_TIFF_2017
         return tifffile.imread(path_tiff).astype(int)
 
     @cached_property
