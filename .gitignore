@@ -1,0 +1,8 @@
+*:Zone.Identifier
+.ipynb_checkpoints
+*.pyc
+*/__pycache__
+*/*:Zone.Identifier
+.python-version
+.DS_Store
+*.egg-info/
