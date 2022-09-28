@@ -3,6 +3,7 @@ import pandas as pd
 import tifffile
 import numpy as np
 from cached_property import cached_property
+
 FOLDER = "/Users/edmz/data/icm_data/"
 PATH_JSONL_LAST = "/Users/edmz/data/icm_data/atlas_last.jsonl"
 PATH_JSONL_CLEARMAP = "../resources/atlas_clearmap.jsonl"
@@ -12,7 +13,7 @@ PATH_TIFF_2017 = '/Users/edmz/data/icm_data/atlas/atlas_tif/annotation_25_2017.t
 
 
 class Atlas:
-    def __init__(self, tiff_version="2016", json_version="last"):
+    def __init__(self, tiff_version="2016", json_version="clearmap"):
         self.tiff_version = tiff_version
         self.json_version = json_version
         self.df_indexed = self.df.set_index('id')
@@ -99,7 +100,7 @@ class Atlas:
     def get_children(self, structure_ids):
         if isinstance(structure_ids, int):
             structure_ids = [structure_ids]
-        map_children = self.get_map_children(parents_ids=structure_ids, including_parent=False)
+        map_children = self.get_map_children(parents_ids=structure_ids, including_parents=False)
         children = []
         for parent in map_children:
             children.extend(map_children[parent])
