@@ -6,3 +6,5 @@ seaborn
 tifffile
 cached_property
 pynrrd
+jupyter
+jupyter_contrib_nbextensions

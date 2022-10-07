@@ -1,5 +1,6 @@
-BASE_FOLDER_DATA="/home/etienne.doumazane/data"
-BASE_FOLDER_FIGS="/home/etienne.doumazane/figures"
+"""
+moved to init
+"""
 
 # import os
 # import socket
