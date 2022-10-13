@@ -76,7 +76,6 @@ alias gcm="git commit -m"
 alias cdtools="cd ~/code/doumazane/icm_toolbox"
 alias catools="cact icm_toolbox"
 
-
 alias caabba="cact abba-brainglobe-deepslice-itk"
 alias cdabba="cd ~/code/NicoKiaru/ABBA-Python"
 
@@ -86,3 +85,21 @@ alias cdcm="cd ~/code/ChristophKirst/ClearMap2"
 alias cabggen="cact allen"
 alias cdbggen="cd ~/code/brainglobe/bg-atlasgen"
 ```
+
+## Cheat sheet `git`
+```bash
+pwd
+git status
+git add my_file
+git rm --cached my_file
+gedit .gitignore
+# check this one echo "!**/*.ipynb" >> .gitignore
+gh repo create
+git remote -v
+git remote set-url origin new_url_if_you_changed_your_repo_name
+git branch 
+git checkout -b branch_name
+git checkout branch_name 
+```
+
+## Cheat sheet `gcloud`
