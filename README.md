@@ -11,7 +11,9 @@ Currently, functionalities are implememted with the `tools_edmz` package but may
 To be done
 
 Install `ClearMapUi` (we may write a script to install minimal components required for analysis)
-```
+
+```bash
+git clone git@github.com:doumazane/icm_toolbox.git
 ##
 conda install -c conda-forge jupyter jupyter_contrib_nbextensions cached_property numpy pandas matplotlib seaborn
 ```
