@@ -96,10 +96,18 @@ gedit .gitignore
 # check this one echo "!**/*.ipynb" >> .gitignore
 gh repo create
 git remote -v
-git remote set-url origin new_url_if_you_changed_your_repo_name
+git remote set-url origin your_new_url
 git branch 
 git checkout -b branch_name
 git checkout branch_name 
+
+git switch remote_branch
+```
+
+## Cheat sheet `conda`
+```bash
+conda list
+conda env remove -n your_env_name
 ```
 
 ## Cheat sheet `gcloud`
