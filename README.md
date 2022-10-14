@@ -108,6 +108,10 @@ git switch remote_branch
 ```bash
 conda list
 conda env remove -n your_env_name
+conda create --clone
+conda env export > env.yaml
+conda env create -f env.yaml -n foo
 ```
+https://stackoverflow.com/a/64384990/14908558
 
 ## Cheat sheet `gcloud`
