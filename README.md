@@ -17,8 +17,11 @@ Currently, functionalities are implememted with a `tools_edmz` package but may l
 Install `ClearMapUi` (we may write a script to install minimal components required for analysis)
 
 ```bash
-conda create --name icm_toolbox python=3.8
-conda install -c conda-forge jupyter jupyter_contrib_nbextensions cached_property numpy pandas matplotlib seaborn
+conda create --name toolbox38 python=3.8
+conda activate toolbox38
+
+pip install jupyter jupyter_contrib_nbextensions
+conda install -c conda-forge cached_property numpy pandas matplotlib seaborn
 
 cd
 mkdir -p code/doumazane
@@ -74,7 +77,7 @@ alias gcm="git commit -m"
 
 ## environments
 alias cdtools="cd ~/code/doumazane/icm_toolbox"
-alias catools="cact icm_toolbox"
+alias catools="cact toolbox37"
 
 alias caabba="cact abba-brainglobe-deepslice-itk"
 alias cdabba="cd ~/code/NicoKiaru/ABBA-Python"

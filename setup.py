@@ -7,7 +7,7 @@ from setuptools import find_packages
 # requirements = [x.strip() for x in content]
 
 
-setup(name='tools_edmz',
+setup(name='icm_toolbox',
       description="tools for icm data exploration",
       packages=find_packages(),
       # install_requires=requirements

@@ -5,8 +5,8 @@ import numpy as np
 from cached_property import cached_property
 
 FOLDER = "/Users/edmz/data/icm_data/"
-PATH_JSONL_LAST = "/Users/edmz/data/icm_data/atlas_last.jsonl"
-PATH_JSONL_CLEARMAP = "../resources/atlas_clearmap.jsonl"
+PATH_JSONL_LAST = "/home/etienne.doumazane/code/doumazane/icm_toolbox/tools_edmz/resources/atlas_last.jsonl"
+PATH_JSONL_CLEARMAP = "/home/etienne.doumazane/code/doumazane/icm_toolbox/tools_edmz/resources/atlas_clearmap.jsonl"
 PATH_TIFF_CLEARMAP = '/home/etienne.doumazane/code/ChristophKirst/ClearMap2/ClearMap/Resources/Atlas/ABA_25um_annotation.tif'
 PATH_TIFF_2017 = '/Users/edmz/data/icm_data/atlas/atlas_tif/annotation_25_2017.tif'
 # FOLDER = "/Users/edmz/data/icm_data/"
@@ -21,7 +21,6 @@ class Atlas:
     def __init__(self, tiff_version="2016", json_version="clearmap"):
         self.tiff_version = tiff_version
         self.json_version = json_version
-        self.df_indexed = self.df.set_index('id')
 
     @cached_property
     def df(self):
@@ -31,7 +30,7 @@ class Atlas:
             path_jsonl = PATH_JSONL_CLEARMAP
         else:
             return
-        return pd.read_json(path_jsonl, lines=True)
+        return pd.read_json(path_jsonl, lines=True, orient="records")
 
     @cached_property
     def tiff(self):
@@ -82,7 +81,7 @@ class Atlas:
     def get_map_children(self, parents_ids=None, including_parents=False):
         map_children = {}
         for parent_id in parents_ids:
-            map_children[parent_id] = self.df_indexed.loc[parent_id, 'all_children_structures_ids'].copy()
+            map_children[parent_id] = self.df.set_index('id').loc[parent_id, 'all_children_structures_ids'].copy()
         if including_parents:
             for parent in parents_ids:
                 map_children[parent].append(parent)
