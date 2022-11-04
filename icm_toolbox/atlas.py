@@ -5,8 +5,8 @@ import numpy as np
 from cached_property import cached_property
 
 FOLDER = "/Users/edmz/data/icm_data/"
-PATH_JSONL_LAST = "/home/etienne.doumazane/code/doumazane/icm_toolbox/tools_edmz/resources/atlas_last.jsonl"
-PATH_JSONL_CLEARMAP = "/home/etienne.doumazane/code/doumazane/icm_toolbox/tools_edmz/resources/atlas_clearmap.jsonl"
+PATH_JSONL_LAST = "/doumazane/icm_toolbox/icm_toolbox/resources/atlas_last.jsonl"
+PATH_JSONL_CLEARMAP = "/doumazane/icm_toolbox/icm_toolbox/resources/atlas_clearmap.jsonl"
 PATH_TIFF_CLEARMAP = '/home/etienne.doumazane/code/ChristophKirst/ClearMap2/ClearMap/Resources/Atlas/ABA_25um_annotation.tif'
 PATH_TIFF_2017 = '/Users/edmz/data/icm_data/atlas/atlas_tif/annotation_25_2017.tif'
 # FOLDER = "/Users/edmz/data/icm_data/"
